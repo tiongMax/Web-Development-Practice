@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box; /* Border and padding are counted into width and hight with this value */
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f7;
+  }
+  
+  .header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+  }
+  
+  .gallery {
+    display: flex;          /* For flex container: Start */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    /* End */
+    gap: 16px; /* gap between each flex item */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  
+  .gallery img { /* select img in gallery class */
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover; /* img will now expand with aspect ratio */
+    border-radius: 10px;
+  }
+  
+  .gallery::after { /* Add a pseudo last child element to the parent */
+    content: "";
+    width: 350px; 
+    /* With the same width as other child element will result in creating a new flex item (pseudo) */ 
+  }
+  
